@@ -59,7 +59,7 @@ data "vsphere_vnic" "vnic" {
   ipv4 {
     dhcp = false
   }
-
+}
 # Create VMs
 resource "vsphere_virtual_machine" "vm" {
 count = var.vm-count
