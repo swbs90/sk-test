@@ -24,3 +24,8 @@ output "vsphere_dc" {
   value = data.vsphere_datacenter.dc
   description = "DC"
 }
+
+output "vsphere_resource" {
+  value = resource.vsphere_virtual_machine.vm
+  description = "resource"
+}
