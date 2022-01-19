@@ -21,6 +21,6 @@
 #}
 
 output "vsphere_dc" {
-  value = vsphere_datacenter.dc
+  value = data.vsphere_datacenter.dc
   description = "DC"
 }
