@@ -21,6 +21,6 @@
 #}
 
 output "vsphere_cpu" {
-  value       = vsphere_virtual_machine.vm.vm-cpu
+  value       = vsphere_virtual_machine.vm.[count.index]
   description = "CPU"
 }
