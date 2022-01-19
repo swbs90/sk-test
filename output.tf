@@ -26,7 +26,7 @@ output "vsphere_dc" {
 }
 
 output "vsphere_disk" {
-  value = vsphere_virtual_machine.vm.size.disk
+  value = vsphere_virtual_machine.vm.disk.size
   #sensitive = true
   description = "resource"
 }
