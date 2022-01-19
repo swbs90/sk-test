@@ -108,15 +108,15 @@ description = "가상머신을 배포할 템플릿 이름"
 #description = "분산 스위치 포트그룹"
 #}
 
-#variable "vm-ipv4"{
-#type = string
-#description = "ipv4 address"
-#}
+variable "vm-ipv4"{
+type = string
+description = "ipv4 address"
+}
 
-#variable "vm-netmask"{
-#type = string
-#description = "netmask"
-#}
+variable "vm-netmask"{
+type = string
+description = "netmask"
+}
 
 #variable "vm-gw4"{
 #type = string
