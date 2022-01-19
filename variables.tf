@@ -54,10 +54,10 @@ type = string
 description = "VMWare vSphere datastore 이름"
 }
 
-variable "vm-network" {
-type = string
-description = "VMWare vSphere Network 이름"
-}
+#variable "vm-network" {
+#type = string
+#description = "VMWare vSphere Network 이름"
+#}
 
 variable "vm-cpu" {
 type = string
