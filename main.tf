@@ -33,19 +33,19 @@ name = "/${var.vsphere-datacenter}/vm/${var.vsphere-template-folder}/${var.vm-te
 datacenter_id = data.vsphere_datacenter.dc.id 
 } 
 
-#data "vsphere_distributed_virtual_switch" "dvs"{
-#name = var.vm-dvs
-#datacenter_id = data.vsphere_datacenter.dc.id
-#}
+data "vsphere_distributed_virtual_switch" "dvs"{
+name = var.vm-dvs
+datacenter_id = data.vsphere_datacenter.dc.id
+}
 
-#resource "vsphere_distributed_port_group" "pg"{
-#name = var.vm-pg
-#distributed_virtual_switch_uuid = data.vsphere_distributed_virtual_switch.dvs.id
+resource "vsphere_distributed_port_group" "pg"{
+name = var.vm-pg
+distributed_virtual_switch_uuid = data.vsphere_distributed_virtual_switch.dvs.id
 
 ###active_uplinks = data.vsphere_distributed_virtual_switch.dvs.uplinks[0] //뭐가 다른거?;;
-#active_uplinks  = ["${data.vsphere_distributed_virtual_switch.dvs.uplinks[0]}"]
+active_uplinks  = ["${data.vsphere_distributed_virtual_switch.dvs.uplinks[0]}"]
 
-#}
+}
 
 data "vsphere_network" "network" {
 name = var.vm-network
@@ -53,12 +53,12 @@ datacenter_id = data.vsphere_datacenter.dc.id
 depends_on = [vsphere_distributed_port_group.pg]
 }
 
-#data "vsphere_vnic" "vnic" {
-#  name = var.vm-nic
-#  portgroup = vsphere_host_port_group.p1.name
-#  ipv4 {
-#    dhcp = false
-#  }
+data "vsphere_vnic" "vnic" {
+  name = var.vm-nic
+  portgroup = vsphere_host_port_group.p1.name
+  ipv4 {
+    dhcp = false
+  }
 
 # Create VMs
 resource "vsphere_virtual_machine" "vm" {
@@ -99,7 +99,7 @@ clone {
        #dns_server_list = ["8.8.8.8", "8.8.4.4"]
       }
 
-    #  ipv4_gateway = "${var.vm-gw4}"
+      ipv4_gateway = "${var.vm-gw4}"
   }
  }
 }
