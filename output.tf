@@ -25,8 +25,8 @@ output "vsphere_dc" {
   description = "DC"
 }
 
-output "vsphere_resource" {
-  value = resource.vsphere_virtual_machine.vm.num_cpus
+output "vsphere_disk" {
+  value = resource.vsphere_virtual_machine.vm.disk
   #sensitive = true
   description = "resource"
 }
