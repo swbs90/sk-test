@@ -26,7 +26,7 @@ output "vsphere_dc" {
 }
 
 output "vsphere_resource" {
-  value = resource.vsphere_virtual_machine.vm
-  sensitive = true
+  value = resource.vsphere_virtual_machine.vm.num_cpus
+  #sensitive = true
   description = "resource"
 }
