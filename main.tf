@@ -93,11 +93,11 @@ clone {
       domain = "test.internal"
     }
   
-    #network_interface {
-    #   ipv4_address    = "${var.vm-ipv4}"
-    #   ipv4_netmask    = "${var.vm-netmask}" 
-    #   #dns_server_list = ["8.8.8.8", "8.8.4.4"]
-    #  }
+    network_interface {
+       ipv4_address    = "${var.vm-ipv4}"
+       ipv4_netmask    = "${var.vm-netmask}" 
+       #dns_server_list = ["8.8.8.8", "8.8.4.4"]
+      }
 
     #  ipv4_gateway = "${var.vm-gw4}"
   }
