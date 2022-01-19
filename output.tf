@@ -20,7 +20,7 @@
 #  value       = google_storage_bucket.storage_bucket.*.url
 #}
 
-output "vsphere_cpu" {
-  string       = OK
-  description = "CPU"
+output "vsphere_dc" {
+  value = vsphere_datacenter.dc
+  description = "DC"
 }
