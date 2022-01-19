@@ -47,11 +47,11 @@ datacenter_id = data.vsphere_datacenter.dc.id
 
 #}
 
-#data "vsphere_network" "network" {
-#name = var.vm-network
-#datacenter_id = data.vsphere_datacenter.dc.id
-#depends_on = [vsphere_distributed_port_group.pg]
-#}
+data "vsphere_network" "network" {
+name = var.vm-network
+datacenter_id = data.vsphere_datacenter.dc.id
+depends_on = [vsphere_distributed_port_group.pg]
+}
 
 #data "vsphere_vnic" "vnic" {
 #  name = var.vm-nic
