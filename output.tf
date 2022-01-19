@@ -19,3 +19,8 @@
 #output "gcp_cloud_storage_bucket_url" {
 #  value       = google_storage_bucket.storage_bucket.*.url
 #}
+
+output "vsphere_cpu" {
+  value       = vsphere_virtual_machine.vm-cpu
+  description = "CPU"
+}
