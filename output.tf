@@ -21,6 +21,6 @@
 #}
 
 output "vsphere_cpu" {
-  value       = vsphere_virtual_machine.vm-cpu
+  value       = test
   description = "CPU"
 }
