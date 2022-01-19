@@ -73,9 +73,9 @@ guest_id = var.vm-guest-id
 ##wait_for_guest_net_routable = false
 #wait_for_guest_net_timeout = 0
 #wait_for_guest_ip_timeout  = 0
-#network_interface {
-#  network_id = data.vsphere_network.network.id
-#}
+network_interface {
+  network_id = data.vsphere_network.network.id
+}
 
 disk {
   label = "${var.vm-name}-disk"
