@@ -53,13 +53,14 @@ datacenter_id = data.vsphere_datacenter.dc.id
 depends_on = [vsphere_distributed_port_group.pg]
 }
 
-data "vsphere_vnic" "vnic" {
-  name = var.vm-nic
-  portgroup = vsphere_host_port_group.p1.name
-  ipv4 {
-    dhcp = false
-  }
-}
+#data "vsphere_vnic" "vnic" {
+#  name = var.vm-nic
+#  portgroup = vsphere_host_port_group.p1.name
+#  ipv4 {
+#    dhcp = false
+#  }
+#}
+
 # Create VMs
 resource "vsphere_virtual_machine" "vm" {
 count = var.vm-count
