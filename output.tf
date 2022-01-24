@@ -28,11 +28,17 @@ output "vsphere_dc" {
 output "vsphere_disk" {
   value = vsphere_virtual_machine.vm.*.disk
   #sensitive = true
-  description = "resource"
+  description = "disk all info"
 }
 
 output "vsphere_cpu" {
   value = vsphere_virtual_machine.vm.*.num_cpus
   #sensitive = true
-  description = "resource"
+  description = "cpu all info"
+}
+
+output "vsphere_memory" {
+  value = vsphere_virtual_machine.vm.memory
+  #sensitive = true
+  description = "memory"
 }
