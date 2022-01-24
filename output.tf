@@ -38,7 +38,13 @@ output "vsphere_cpu" {
 }
 
 output "vsphere_memory" {
-  value = vsphere_virtual_machine.vm.memory
+  value = vsphere_virtual_machine.vm.*.memory
   #sensitive = true
   description = "memory"
+}
+
+output "vsphere_name" {
+  value = vsphere_virtual_machine.vm.host_name
+  #sensitive = true
+  description = "vm hostname"
 }
