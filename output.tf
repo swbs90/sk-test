@@ -20,11 +20,6 @@
 #  value       = google_storage_bucket.storage_bucket.*.url
 #}
 
-output "vsphere_dc" {
-  value = data.vsphere_datacenter.dc
-  description = "DC"
-}
-
 output "vsphere_disk" {
   value = vsphere_virtual_machine.vm.*.disk
   #sensitive = true
