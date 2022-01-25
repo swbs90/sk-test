@@ -38,7 +38,7 @@ name = var.vm-dvs
 datacenter_id = data.vsphere_datacenter.dc.id
 }
 
-resource "vsphere_distributed_port_group" "pg"{
+data "vsphere_distributed_port_group" "pg"{
 name = var.vm-pg
 distributed_virtual_switch_uuid = data.vsphere_distributed_virtual_switch.dvs.id
 
