@@ -132,5 +132,5 @@ default = "24"
 variable "vm-gw4"{
 type = string
 description = "gateway"
-default = "172.21.4.1"
+default = "172.21.2.1"
 }
