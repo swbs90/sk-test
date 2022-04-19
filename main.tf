@@ -38,11 +38,6 @@ name = var.vm-dvs
 datacenter_id = data.vsphere_datacenter.dc.id
 }
 
-###active_uplinks = data.vsphere_distributed_virtual_switch.dvs.uplinks[0] //뭐가 다른거?;;
-active_uplinks  = ["${data.vsphere_distributed_virtual_switch.dvs.uplinks[0]}"]
-
-}
-
 data "vsphere_network" "network" {
 name = var.vm-network
 datacenter_id = data.vsphere_datacenter.dc.id
