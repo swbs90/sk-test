@@ -38,10 +38,6 @@ name = var.vm-dvs
 datacenter_id = data.vsphere_datacenter.dc.id
 }
 
-resource "vsphere_distributed_port_group" "pg"{
-name = var.vm-pg
-distributed_virtual_switch_uuid = data.vsphere_distributed_virtual_switch.dvs.id
-
 ###active_uplinks = data.vsphere_distributed_virtual_switch.dvs.uplinks[0] //뭐가 다른거?;;
 active_uplinks  = ["${data.vsphere_distributed_virtual_switch.dvs.uplinks[0]}"]
 
@@ -50,7 +46,6 @@ active_uplinks  = ["${data.vsphere_distributed_virtual_switch.dvs.uplinks[0]}"]
 data "vsphere_network" "network" {
 name = var.vm-network
 datacenter_id = data.vsphere_datacenter.dc.id
-depends_on = [vsphere_distributed_port_group.pg]
 }
 
 #data "vsphere_vnic" "vnic" {
